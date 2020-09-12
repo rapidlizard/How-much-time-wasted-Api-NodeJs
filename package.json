@@ -1,8 +1,7 @@
 {
-  "name": "api",
+  "name": "boilerplate-ts-jest",
+  "description": "Node.js boilerplate - Typescript + Jest",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
     "pino": "^6.6.0",

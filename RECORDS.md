@@ -1,4 +1,6 @@
-### language: ts (tsc vs babel)
+# RECORDS
+
+## compiler: tsc (vs babel)
 
 - https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
 
@@ -10,18 +12,18 @@
 
 **rejected: babel-node**
 
+- not complete
 - https://www.robinwieruch.de/minimal-node-js-babel-setup
--
 
-### linting: eslint + prettier
+## linting: eslint + prettier
 
 - https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
 
-### logger: pino-http + pino-pretty
+## logger: pino-http + pino-pretty
 
 - https://github.com/pinojs/pino-http
 
-### jest
+## jest
 
 - https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln
 
