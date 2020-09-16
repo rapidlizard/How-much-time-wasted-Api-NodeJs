@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-interface SteamPlayer {
+export interface SteamPlayer {
   steamid: string;
   personaname: string;
   profileurl: string;
