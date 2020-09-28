@@ -1,5 +1,13 @@
 import axios, { AxiosResponse } from 'axios';
 
+export interface SteamGame {
+  appid: number;
+  playtime_forever: number;
+  playtime_windows_forever: number;
+  playtime_mac_forever: number;
+  playtime_linux_forever: number;
+}
+
 export interface SteamPlayer {
   steamid: string;
   personaname: string;

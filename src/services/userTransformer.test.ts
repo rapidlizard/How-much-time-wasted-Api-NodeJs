@@ -1,7 +1,7 @@
 import { UserTransformer } from './userTransformer';
 
-import userData from './expected/user.json';
-import expectedUser from './return/user.json';
+import userData from './input/user.json';
+import expectedUser from './expected/user.json';
 
 test('should return user instance', () => {
   const result = UserTransformer.createUser(userData);
