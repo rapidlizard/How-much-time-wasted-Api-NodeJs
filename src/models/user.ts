@@ -9,6 +9,7 @@ export class User {
   public created: number;
   public url: string;
   public games: Array<Game>;
+  public totalHours: number;
 
   constructor(img: string, name: string, created: number, url: string) {
     this.img = img;
@@ -16,5 +17,16 @@ export class User {
     this.created = created;
     this.url = url;
     this.games = [];
+    this.totalHours = 0;
+  }
+
+  calcTotalHours() {
+    let totalMinutes = 0;
+
+    this.games.forEach((game) => {
+      totalMinutes += game.playtime;
+    });
+
+    this.totalHours = totalMinutes / 60;
   }
 }

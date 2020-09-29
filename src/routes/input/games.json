@@ -4,28 +4,28 @@
         "games": [
             {
                 "appid": 10,
-                "playtime_forever": 82,
+                "playtime_forever": 100,
                 "playtime_windows_forever": 0,
                 "playtime_mac_forever": 0,
                 "playtime_linux_forever": 13
             },
             {
                 "appid": 80,
-                "playtime_forever": 0,
+                "playtime_forever": 1000,
                 "playtime_windows_forever": 0,
                 "playtime_mac_forever": 0,
                 "playtime_linux_forever": 0
             },
             {
                 "appid": 100,
-                "playtime_forever": 0,
+                "playtime_forever": 5000,
                 "playtime_windows_forever": 0,
                 "playtime_mac_forever": 0,
                 "playtime_linux_forever": 0
             },
             {
                 "appid": 240,
-                "playtime_forever": 98,
+                "playtime_forever": 9890,
                 "playtime_windows_forever": 0,
                 "playtime_mac_forever": 0,
                 "playtime_linux_forever": 0

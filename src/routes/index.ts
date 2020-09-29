@@ -16,6 +16,7 @@ router.get('/:steamid', async (req, res, next) => {
     const games = GameTransformer.createGameList(gamesData);
 
     user.games = games;
+    user.calcTotalHours();
 
     res.json(user);
   } catch (err) {
