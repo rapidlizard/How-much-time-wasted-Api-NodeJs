@@ -17,12 +17,21 @@ export interface SteamPlayer {
   loccountrycode: string;
 }
 
-interface SteamResponsePayload {
+interface SteamUserResponsePayload {
   players: Array<SteamPlayer>;
 }
 
-interface SteamResponse {
-  response: SteamResponsePayload;
+interface SteamUserResponse {
+  response: SteamUserResponsePayload;
+}
+
+interface SteamGamesResponsePayload {
+  game_count: number;
+  games: Array<SteamGame>;
+}
+
+interface SteamGamesResponse {
+  response: SteamGamesResponsePayload;
 }
 
 class Steam {
@@ -32,13 +41,23 @@ class Steam {
     this.id = id;
   }
 
-  getInfo() {
+  getUserInfo() {
     const url =
       'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=2FA14ED02A1D7CCC0E4FCA80AE6AE194&steamids=' +
       this.id;
 
-    return axios.get<SteamResponse>(url).then((response) => {
+    return axios.get<SteamUserResponse>(url).then((response) => {
       return response.data.response.players[0];
+    });
+  }
+
+  getUserGames() {
+    const url =
+      'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=2FA14ED02A1D7CCC0E4FCA80AE6AE194&steamid=' +
+      this.id;
+
+    return axios.get<SteamGamesResponse>(url).then((response) => {
+      return response.data.response.games;
     });
   }
 }

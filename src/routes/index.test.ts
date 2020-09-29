@@ -4,21 +4,24 @@ import axios from 'axios';
 import app from '../app';
 
 import expectedUser from './expected/user.json';
-import mockSteamUser from './input/user.json';
+import userData from './input/user.json';
+import gamesData from './input/games.json';
 
 jest.mock('axios');
 
-test('should return user', () => {
-  const mockdata = { data: mockSteamUser };
+test('should return user', async () => {
+  const mockUserData = { data: userData };
+  const mockGamesData = { data: gamesData };
 
   const getSpy = axios.get as jest.Mock<any, any>;
-  getSpy.mockResolvedValue(mockdata);
-  return request(app)
-    .get('/76561198066000502')
-    .then((response: any) => {
-      expect(response.status).toBe(200);
-      expect(response.body).toEqual(expectedUser);
-    });
+  getSpy.mockResolvedValueOnce(mockUserData).mockResolvedValueOnce(mockGamesData);
+
+  const promise = request(app).get('/76561198066000502');
+
+  return promise.then((response: any) => {
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(expectedUser);
+  });
 });
 
 // test('should resolve', async () => {
