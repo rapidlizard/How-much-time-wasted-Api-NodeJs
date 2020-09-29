@@ -21,5 +21,9 @@
             "appid": 240,
             "playtime": 9890
         }
-    ]
+    ],
+    "rating": {
+        "description": "Sponsored by RAID: Shadow Legends",
+        "title": "You might aswell just play mobile games"
+    }
 }

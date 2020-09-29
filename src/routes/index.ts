@@ -3,6 +3,7 @@ import Steam from '../models/steam';
 
 import { UserTransformer } from '../services/userTransformer';
 import { GameTransformer } from '../services/gameTransformer';
+import { RatingCalc } from '../services/ratingCalc';
 
 const router = express.Router();
 
@@ -17,6 +18,7 @@ router.get('/:steamid', async (req, res, next) => {
 
     user.games = games;
     user.calcTotalHours();
+    user.rating = RatingCalc.getRating(user.totalHours);
 
     res.json(user);
   } catch (err) {
